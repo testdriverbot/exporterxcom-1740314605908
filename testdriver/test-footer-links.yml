@@ -1,0 +1,39 @@
+version: 4.2.12
+session: 67bb19fc7739a18d6e691e7b
+steps:
+  - prompt: Click on each link in the footer.
+    commands:
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+  - prompt: Click on each link in the footer.
+    commands:
+      - command: hover-text
+        text: Reload
+        description: reload button on the error page
+        action: click
+      - command: wait
+        timeout: 5000
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+  - prompt: Click on each link in the footer.
+    commands:
+      - command: hover-text
+        text: Reload
+        description: reload button on the error page
+        action: click
+      - command: wait
+        timeout: 5000
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
+  - prompt: Assert that each link directs to the correct page.
+    commands: []
+  - prompt: >-
+      Assert there are no errors or broken links in the footer.  # Use the
+      content of the file from the environment
+    commands: []
