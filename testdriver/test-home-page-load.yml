@@ -1,0 +1,34 @@
+version: 4.2.12
+session: 67bb1a007739a18d6e691e7e
+steps:
+  - prompt: Navigate to the homepage.
+    commands:
+      - command: press-keys
+        keys:
+          - control
+          - l
+      - command: type
+        text: https://www.google.com
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: Assert that the homepage loads successfully.
+    commands:
+      - command: assert
+        expect: Google logo is visible
+  - prompt: Assert that no errors are displayed on the page.
+    commands:
+      - command: assert
+        expect: no error messages are visible
+  - prompt: >-
+      Assert that all main elements are visible  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: Google logo is visible
+      - command: assert
+        expect: Search bar is visible
+      - command: assert
+        expect: Google Search button is visible
+      - command: assert
+        expect: I'm Feeling Lucky button is visible
